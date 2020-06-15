@@ -48,9 +48,6 @@ function render(library) {
   }
 }
 
-// let tag_id = document.getElementById('books');
-// tag_id.innerHTML('HTML string');
-
 const book1 = new Book('La Odisea', 'anonymus', 243, true);
 const book2 = new Book('Test book', 'Test author', 501, false);
 addBookToLibrary(book1);
