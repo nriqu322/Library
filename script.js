@@ -1,10 +1,13 @@
 let myLibrary = []
 
-function Book(title, author, pages, read) {
+render(<p>Hello</p>, document.getElementById('books'));
+
+function Book(title, author, pages, read = false, data) {
   this.title = title
   this.author = author
   this.pages = pages
   this.read = read
+  this.data = data
   this.check = function () {
     if(read == true){
       return 'read';
@@ -17,8 +20,8 @@ function Book(title, author, pages, read) {
   }
 }
 
-function addBookToLibrary() {
-
+function addBookToLibrary(obj) {
+  myLibrary.push(obj);
 }
 
 
