@@ -6,16 +6,6 @@ function Book(title, author, pages, read = false, data) {
   this.pages = pages;
   this.read = read;
   this.data = data;
-  // this.check = function () {
-  //   if(read == true){
-  //     return 'read';
-  //   } else {
-  //     return "didn't read yet";
-  //   }
-  //   }
-  // this.iconst bookList = document.createElement('div');nfo = function() {
-  //   return `${title} by ${author}, ${pages} pages, ${this.check()}`;
-  // }
 }
 
 function addBookToLibrary(obj) {
