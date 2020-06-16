@@ -1,8 +1,8 @@
 #  Library Project  
   
 ## About
-This project is part of the Microverse Curriculum projects. It is as Javascript application to test Objects prototypes, constructors and the bond between them to make a working web application, through a book management system.
-This system consists in creating a book information, check if you read it and visualize it's results in the page itself.
+This project is part of the Microverse Curriculum projects. It is as Javascript application to practice objects prototypes, constructors and the bond between them to make a working web application, through a book management system.
+This system consists in creating a book information as title, author and number of pages. Also checks if you read it or not and visualize it's results in the page itself.
 
 ## Build with
 * JavaScript
