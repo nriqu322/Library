@@ -21,12 +21,6 @@ Book.prototype.changeReadBook = function () {
   }
 }
 
-function clearForm() {
-  title.value = "";
-  author.value = "";
-  pages.value = "";
-}
-
 function render(library) {
 
   document.querySelector('.library-list').innerHTML = "";
@@ -104,6 +98,6 @@ document.getElementById('book-form').onsubmit = function () {
   const newBook = new Book(title, author, pages, read);
 
   addBookToLibrary(newBook);
-
+  document.getElementById("book-form").reset();
   return false;
 }
