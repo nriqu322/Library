@@ -27,10 +27,10 @@ function render(library) {
 
   for (let i = 0; i < library.length; i++) {
     const book = document.createElement('div');
-    book.classList.add('book');
+    book.classList.add('book', 'col-4', 'text-center');
 
     let bookTitle = document.createElement('div');
-    bookTitle.classList.add('book-title');
+    bookTitle.classList.add('book-title', 'font-weight-bold', 'my-2');
     bookTitle.innerHTML = library[i].title;
     book.appendChild(bookTitle);
 
@@ -59,7 +59,7 @@ function render(library) {
     libraryList.appendChild(book);
 
     const changeStatus = document.createElement('button');
-    changeStatus.classList.add('change-status');
+    changeStatus.classList.add('change-status','btn', 'btn-warning');
     changeStatus.id = `book-status-${i}`;
     changeStatus.innerHTML = 'Change Status';
     book.appendChild(changeStatus);
@@ -69,22 +69,23 @@ function render(library) {
     });
 
     const deleteBook = document.createElement('button');
-    deleteBook.classList.add('delete-button');
+    deleteBook.classList.add('delete-button', 'btn-danger', 'btn', 'mx-3', 'my-2');
     deleteBook.id = `book-${i}`;
     deleteBook.innerHTML = 'Delete';
     book.appendChild(deleteBook);
     document.getElementById(`book-${i}`).addEventListener('click', () => {
       myLibrary.splice(i, 1);
       render(myLibrary);
-    }); 
+    });
   }
 }
 
 const book1 = new Book('La Odisea', 'anonymus', 243, true);
 const book2 = new Book('Test book', 'Test author', 501, false);
-
+const book3 = new Book('Test book2', 'Test author2', 501, false);
 addBookToLibrary(book1);
 addBookToLibrary(book2);
+addBookToLibrary(book3);
 // render(myLibrary);
 
 document.getElementById('book-form').onsubmit = function () {
