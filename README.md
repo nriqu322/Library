@@ -1,16 +1,14 @@
-  <h1>
-    Library Project
-  </h1>
+#  Library Project  
   
-  ## About
+## About
     This project is part of the Microverse Curriculum projects.
   
-  ## Build with
-    * JavaScript
-    * HTML
-    * CSS
-    * [Boostrap](https://getbootstrap.com/)
+## Build with
+* JavaScript
+* HTML
+* CSS
+* [Boostrap](https://getbootstrap.com/)
   
-  ## Authors
-    [HeflerDev](https://github.com/HeflerDev)
-    [Luis Saavedra](https://github.com/nriqu322)
+## Authors
+[HeflerDev](https://github.com/HeflerDev)<br>
+[Luis Saavedra](https://github.com/nriqu322)
