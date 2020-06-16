@@ -11,13 +11,19 @@ function Book(title, author, pages, read, id) {
 function addBookToLibrary(obj) {
   myLibrary.push(obj);
   render(myLibrary);
+  clearForm();
 }
 
-function deleteBookFromLibrary(obj){
-
+function deleteBookFromLibrary(id){
+  myLibrary.splice(id, 1);
+  render(myLibrary);
 }
 
-// document.getElementById('delete-button').addEventListener('click', deleteBookFromLibrary(1));
+function clearForm() {
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+}
 
 function render(library) {
 
@@ -51,18 +57,16 @@ function render(library) {
     }
     bookRead.innerHTML = library[i].read;
     book.appendChild(bookRead);
+
     book.id = i;
     const libraryList = document.querySelector('.library-list');
     libraryList.appendChild(book);
 
-    let bookId = document.createElement('p');
-    bookId.innerHTML = book.id;
-    book.appendChild(bookId);
-
     const deleteBook = document.createElement('button');
     deleteBook.classList.add('delete-button');
-    deleteBook.id = `book-${i}` ;
+    // deleteBook.id = `book-${i}` ;
     deleteBook.innerHTML = 'Delete';
+    deleteBook.onclick = function() { deleteBookFromLibrary('id')};
     book.appendChild(deleteBook);
   }
 }
