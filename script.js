@@ -1,17 +1,23 @@
 let myLibrary = [];
 
-function Book(title, author, pages, read = false, data) {
+function Book(title, author, pages, read, id) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.data = data;
+  this.id = id;
 }
 
 function addBookToLibrary(obj) {
   myLibrary.push(obj);
   render(myLibrary);
 }
+
+function deleteBookFromLibrary(obj){
+
+}
+
+// document.getElementById('delete-button').addEventListener('click', deleteBookFromLibrary(1));
 
 function render(library) {
 
@@ -45,9 +51,19 @@ function render(library) {
     }
     bookRead.innerHTML = library[i].read;
     book.appendChild(bookRead);
-
+    book.id = i;
     const libraryList = document.querySelector('.library-list');
     libraryList.appendChild(book);
+
+    let bookId = document.createElement('p');
+    bookId.innerHTML = book.id;
+    book.appendChild(bookId);
+
+    const deleteBook = document.createElement('button');
+    deleteBook.classList.add('delete-button');
+    deleteBook.id = `book-${i}` ;
+    deleteBook.innerHTML = 'Delete';
+    book.appendChild(deleteBook);
   }
 }
 
@@ -69,7 +85,7 @@ document.getElementById('book-form').onsubmit = function () {
   const newBook = new Book(title, author, pages, read);
 
   addBookToLibrary(newBook);
-  
+
   console.log(newBook);
   return false;
 }
@@ -83,6 +99,3 @@ function myFunction() {
 
 document.getElementById("demo").addEventListener("click", myFunction);
 */
-
-
-
