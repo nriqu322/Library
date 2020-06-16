@@ -27,7 +27,7 @@ function render(library) {
 
   for (let i = 0; i < library.length; i++) {
     const book = document.createElement('div');
-    book.classList.add('book', 'col-4', 'text-center', 'border', 'border-secondary', 'rounded');
+    book.classList.add('book', 'col-8','col-md-5', 'col-lg-3','mx-auto', 'my-2', 'text-center', 'border', 'border-secondary', 'rounded');
 
     let bookTitle = document.createElement('div');
     bookTitle.classList.add('book-title', 'font-weight-bold', 'my-2');
@@ -48,8 +48,10 @@ function render(library) {
     bookRead.classList.add('book-read');
     if (library[i].read == true) {
       bookRead.innerHTML = 'Read: Yes';
+      bookRead.classList.add('text-success');
     } else {
       bookRead.innerHTML = "Read: No";
+      bookRead.classList.add('text-danger');
     }
     book.appendChild(bookRead);
 
@@ -58,7 +60,7 @@ function render(library) {
     libraryList.appendChild(book);
 
     const changeStatus = document.createElement('button');
-    changeStatus.classList.add('change-status','btn', 'btn-warning', 'col-6');
+    changeStatus.classList.add('change-status','btn', 'btn-warning', 'col-10');
     changeStatus.id = `book-status-${i}`;
     changeStatus.innerHTML = 'Change Status';
     book.appendChild(changeStatus);
@@ -66,9 +68,9 @@ function render(library) {
       myLibrary[i].changeReadBook();
       render(myLibrary);
     });
-    
+
     const deleteBook = document.createElement('button');
-    deleteBook.classList.add('delete-button', 'btn-danger', 'btn', 'mx-3', 'my-2', 'col-6');
+    deleteBook.classList.add('delete-button', 'btn-danger', 'btn', 'my-2', 'col-8');
     deleteBook.id = `book-${i}`;
     deleteBook.innerHTML = 'Delete';
     book.appendChild(deleteBook);
