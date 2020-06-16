@@ -7,7 +7,7 @@ This system consists in creating a book information, check if you read it and vi
 ### Live Version
 Check the live version [here](https://rawcdn.githack.com/nriqu322/Library/67ebe6988c1b6c1c2542df814ad4a586af0abcaf/index.html).
 
-![Account](app/resources/screenshot.png)
+![Account](/resources/screenshot.png)
   
 ## Build with
 * JavaScript
