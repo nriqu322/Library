@@ -27,7 +27,7 @@ function render(library) {
 
   for (let i = 0; i < library.length; i++) {
     const book = document.createElement('div');
-    book.classList.add('book', 'col-4', 'text-center');
+    book.classList.add('book', 'col-4', 'text-center', 'border', 'border-secondary', 'rounded');
 
     let bookTitle = document.createElement('div');
     bookTitle.classList.add('book-title', 'font-weight-bold', 'my-2');
@@ -36,22 +36,21 @@ function render(library) {
 
     let bookAuthor = document.createElement('div');
     bookAuthor.classList.add('book-author');
-    bookAuthor.innerHTML = library[i].author;
+    bookAuthor.innerHTML = `Author: ${library[i].author}`;
     book.appendChild(bookAuthor);
 
     let bookPages = document.createElement('div');
     bookPages.classList.add('book-pages');
-    bookPages.innerHTML = library[i].pages;
+    bookPages.innerHTML = `Pages: ${library[i].pages}`;
     book.appendChild(bookPages);
 
     let bookRead = document.createElement('div');
     bookRead.classList.add('book-read');
     if (library[i].read == true) {
-      bookRead.innerHTML = 'Read';
+      bookRead.innerHTML = 'Read: Yes';
     } else {
-      bookRead.innerHTML = "didn't read yet";
+      bookRead.innerHTML = "Read: No";
     }
-    bookRead.innerHTML = library[i].read;
     book.appendChild(bookRead);
 
     book.id = i;
@@ -59,7 +58,7 @@ function render(library) {
     libraryList.appendChild(book);
 
     const changeStatus = document.createElement('button');
-    changeStatus.classList.add('change-status','btn', 'btn-warning');
+    changeStatus.classList.add('change-status','btn', 'btn-warning', 'col-6');
     changeStatus.id = `book-status-${i}`;
     changeStatus.innerHTML = 'Change Status';
     book.appendChild(changeStatus);
@@ -67,9 +66,9 @@ function render(library) {
       myLibrary[i].changeReadBook();
       render(myLibrary);
     });
-
+    
     const deleteBook = document.createElement('button');
-    deleteBook.classList.add('delete-button', 'btn-danger', 'btn', 'mx-3', 'my-2');
+    deleteBook.classList.add('delete-button', 'btn-danger', 'btn', 'mx-3', 'my-2', 'col-6');
     deleteBook.id = `book-${i}`;
     deleteBook.innerHTML = 'Delete';
     book.appendChild(deleteBook);
