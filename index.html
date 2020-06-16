@@ -6,11 +6,23 @@
   <title>Library</title>
 </head>
 <body>
+<form id='book-form' onsubmit="createBook">
+  <p>Book Title:</p>
+  <input type="text" id='input-title' name="input-title" value=""><br>
+  <p>Book Author:</p>
+  <input type="text" id='input-author' name="input-author" value=""><br>
+  <p>Number of Pages:</p>
+  <input type="number" id='input-pages' name="input-number" value=""><br>
+  <span>Read It?</span>
+  <input type="checkbox" id='input-read' name="input-read"><br>
+  <input type="submit" id='input-submit' name="input-submit" value="Submit">
+</form>
+<hr>
   <div class="library-list">
 
   </div>
 
-  <button>Add Book</button>
+  <button id='btn'>Add Book</button>
 
   <script type="text/javascript" src='script.js'></script>
 </body>

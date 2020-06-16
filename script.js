@@ -13,7 +13,9 @@ function addBookToLibrary(obj) {
 }
 
 function render(library) {
-  
+
+  // document.getElementsByClassName('library-list').innerHTML = '';
+
   for (let i = 0; i < library.length; i++) {
     const book = document.createElement('div');
     book.classList.add('book');
@@ -50,6 +52,42 @@ function render(library) {
 
 const book1 = new Book('La Odisea', 'anonymus', 243, true);
 const book2 = new Book('Test book', 'Test author', 501, false);
-addBookToLibrary(book1);
-addBookToLibrary(book2);
+
+document.getElementById('book-form').onsubmit = function createBook(form) {
+  console.log('Works') ;
+
+  const title = document.getElementById('input-title').value;
+  const author = document.getElementById('input-author').value;
+  const pages = document.getElementById('input-pages').value;
+  const read = document.getElementById('input-read').checked;
+
+  book = new Book(title, author, pages, read);
+
+  console.log(book);
+  //let inputs = form.getElementsByTagName('input');
+  //let values = {} ;
+
+  /*
+  for(let i = 0 ; i < inputs.length ; i++){
+    values[inputs[i].title] = inputs[i].value ;
+    values[inputs[i].author] = inputs[i].value ;
+    values[inputs[i].pages] = inputs[i].value ;
+    values[inputs[i].read] = inputs[i].value ;
+  }
+  */
+  return false;
+}
+
+// document.getElementById('btn').addEventListener('click', createBook);
+
+/*
+function myFunction() {
+  document.getElementById("demo").innerHTML = "You Clicked";
+}
+
+document.getElementById("demo").addEventListener("click", myFunction);
+*/
+
+
+//addBookToLibrary(book2);
 render(myLibrary);
