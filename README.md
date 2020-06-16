@@ -6,13 +6,48 @@ This system consists in creating a book information, check if you read it and vi
 
 ### Live Version
 Check the live version [here](https://rawcdn.githack.com/nriqu322/Library/67ebe6988c1b6c1c2542df814ad4a586af0abcaf/index.html).
+
+![Account](app/resources/screenshot.png)
   
 ## Build with
 * JavaScript
 * HTML
 * CSS
 * [Bootstrap](https://getbootstrap.com/)
-  
+
 ## Authors
-[HeflerDev](https://github.com/HeflerDev)<br>
-[Luis Saavedra](https://github.com/nriqu322)
+
+👤 **Henrique Hefler**
+
+- Github: [@HeflerDev](https://github.com/HeflerDev)
+- Twitter: [@HeflerDev](https://twitter.com/HeflerDev )
+- Linkedin: [Henrique Hefler](https://www.linkedin.com/in/heflerdev/)
+
+👤 **Luis Saavedra**
+- Github: [@nriqu322](https://github.com/nriqu322)
+- Twitter: [@nriqu322](https://twitter.com/nriqu322)
+- Linkedin: [Luis Saavedra](https://linkedin.com/in/luis-saavedra-sanchez/)
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [Microverse](https://microverse.org)
+
+---
+
+## 📝 License
+
+This project is [MIT](/LICENSE) licensed.
+
+---
