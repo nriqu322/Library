@@ -13,9 +13,12 @@ function addBookToLibrary(obj) {
   render(myLibrary);
 }
 
-function deleteBookFromLibrary(id){
-  myLibrary.splice(id, 1);
-  render(myLibrary);
+Book.prototype.changeReadBook = function () {
+  if (this.read === true) {
+    this.read = false;
+  } else {
+    this.read = true;
+  }
 }
 
 function clearForm() {
@@ -49,7 +52,7 @@ function render(library) {
 
     let bookRead = document.createElement('div');
     bookRead.classList.add('book-read');
-    if (library[i].read === true) {
+    if (library[i].read == true) {
       bookRead.innerHTML = 'Read';
     } else {
       bookRead.innerHTML = "didn't read yet";
@@ -61,11 +64,25 @@ function render(library) {
     const libraryList = document.querySelector('.library-list');
     libraryList.appendChild(book);
 
+    const changeStatus = document.createElement('button');
+    changeStatus.classList.add('change-status');
+    changeStatus.id = `book-status-${i}`;
+    changeStatus.innerHTML = 'Change Status';
+    book.appendChild(changeStatus);
+    document.getElementById(`book-status-${i}`).addEventListener('click', () => {
+      myLibrary[i].changeReadBook();
+      render(myLibrary);
+    });
+
     const deleteBook = document.createElement('button');
     deleteBook.classList.add('delete-button');
+    deleteBook.id = `book-${i}`;
     deleteBook.innerHTML = 'Delete';
-    deleteBook.onclick = function() { deleteBookFromLibrary('id')};
     book.appendChild(deleteBook);
+    document.getElementById(`book-${i}`).addEventListener('click', () => {
+      myLibrary.splice(i, 1);
+      render(myLibrary);
+    }); 
   }
 }
 
