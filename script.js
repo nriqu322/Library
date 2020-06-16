@@ -11,7 +11,6 @@ function Book(title, author, pages, read, id) {
 function addBookToLibrary(obj) {
   myLibrary.push(obj);
   render(myLibrary);
-  clearForm();
 }
 
 function deleteBookFromLibrary(id){
@@ -64,7 +63,6 @@ function render(library) {
 
     const deleteBook = document.createElement('button');
     deleteBook.classList.add('delete-button');
-    // deleteBook.id = `book-${i}` ;
     deleteBook.innerHTML = 'Delete';
     deleteBook.onclick = function() { deleteBookFromLibrary('id')};
     book.appendChild(deleteBook);
@@ -90,16 +88,5 @@ document.getElementById('book-form').onsubmit = function () {
 
   addBookToLibrary(newBook);
 
-  console.log(newBook);
   return false;
 }
-
-// document.getElementById('btn').addEventListener('click', createBook);
-
-/*
-function myFunction() {
-  document.getElementById("demo").innerHTML = "You Clicked";
-}
-
-document.getElementById("demo").addEventListener("click", myFunction);
-*/
