@@ -11,7 +11,7 @@ This system consists in creating a book information as title, author and number 
 * [Bootstrap](https://getbootstrap.com/)
 
 ### Live Version
-Check the live version [here](https://rawcdn.githack.com/nriqu322/Library/67ebe6988c1b6c1c2542df814ad4a586af0abcaf/index.html).
+Check the live version [here](https://rawcdn.githack.com/nriqu322/Library/23e7418302fa58fc5de310119e874007d5097afa/index.html).
 
 ![Account](/resources/screenshot.png)
 
