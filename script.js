@@ -8,6 +8,14 @@ function Book(title, author, pages, read, id) {
   this.id = id;
 }
 
+Book.prototype.changeReadBook = function changeStatus() {
+  if (this.read === true) {
+    this.read = false;
+  } else {
+    this.read = true;
+  }
+};
+
 function render(library) {
   document.querySelector('.library-list').innerHTML = '';
 
@@ -72,21 +80,12 @@ function addBookToLibrary(obj) {
   render(myLibrary);
 }
 
-Book.prototype.changeReadBook = () => {
-  if (this.read === true) {
-    this.read = false;
-  } else {
-    this.read = true;
-  }
-};
-
-const book1 = new Book('La Odisea', 'anonymus', 243, true);
-const book2 = new Book('Test book', 'Test author', 501, false);
-const book3 = new Book('Test book2', 'Test author2', 501, false);
+const book1 = new Book('Harry Potter', 'J.K. Rowling', 341, true);
+const book2 = new Book('The Shining', 'Steven King', 503, false);
+const book3 = new Book('The Little Prince', 'Antoine de Saint-Exupéry', 86, true);
 addBookToLibrary(book1);
 addBookToLibrary(book2);
 addBookToLibrary(book3);
-// render(myLibrary);
 
 document.getElementById('book-form').onsubmit = () => {
   const title = document.getElementById('input-title').value;
